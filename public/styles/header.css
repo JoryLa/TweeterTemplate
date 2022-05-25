@@ -5,7 +5,8 @@ header {
   align-items: center;
   height: 400px;
   width: 100vw;
-  background-image: url('../images/header.png');
+  background-image: url('../images/peach.png');
+  margin-top: 120px;
 }
 
 .name {

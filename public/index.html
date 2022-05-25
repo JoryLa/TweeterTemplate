@@ -24,11 +24,18 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>  
+    <script type="text/javascript" src="/scripts/client.js"></script> 
+    
+    <!-- Character counter JS -->
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     
     <!-- Nav Icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,8 +46,8 @@
     <nav>
       <span class="navleft">tweeter</span>
       <div class="navright">
-        <p><span class="write">Write</span> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
+        <p class="navnew"><span class="write">Write</span> a new tweet</p>
+        <i id="navicon" class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
     
@@ -59,8 +66,8 @@
     <main class="container">
       <section class="new-tweet">
         <form action="/tweets" method="post">
-          <label class="label" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <!--<label class="label" for="tweet-text">What are you humming about?</label>-->
+          <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
           <div class="undertext">
               <button id="tweet" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
@@ -69,9 +76,24 @@
       </section>
       <section class="tweetContainer">
         <article>
-          <img class="profile-pic" src="">
-          <h3>Name</h3>
-          <p>This is where the tweet goes</p>
+          <div class="withTweet">
+            <div class="withAt">
+              <div class="profileInfo">
+                <img class="profile-pic" src="https://i.imgur.com/73hZDYK.png">
+                <h3 id="name">Name</h3>
+              </div>
+              <h3 id="handle">@name</h3>
+            </div>
+            <p>This is where the tweet goes</p>
+          </div>
+          <div class="postInfo">
+            <p class="whenPosted"> 10 days ago</p>
+            <div class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>
         </article>
       </section>
     </main>

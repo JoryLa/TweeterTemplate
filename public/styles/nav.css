@@ -6,13 +6,16 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
-
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navleft {
   display: flex;
   font-family: 'Bungee', cursive;
   font-size: 2.3em;
+  height: 1em;
  }
  
  .navright {
@@ -30,4 +33,7 @@ nav {
    color: rgb(227, 30, 30);
  }
 
+ .navnew {
+  height: 0.3em;
+ }
 
