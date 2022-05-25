@@ -1,0 +1,32 @@
+.new-tweet {
+
+}
+
+textarea {
+  resize: none;
+}
+
+#tweet-text{
+    background: transparent;
+    border-bottom-style: solid;
+    border-color: black;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+#tweet {
+  background-color: #4056A1;
+  color: aliceblue;
+}
+
+.undertext {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
