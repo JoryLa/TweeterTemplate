@@ -1,0 +1,70 @@
+section {
+  border: 1em;
+  border-color: black;
+}
+
+.profileInfo {
+  display: flex;
+  height: 2em;
+  align-items: center;
+  width: 5.1em;
+  justify-content: space-between;
+}
+
+article {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-width: thick;
+}
+
+.withTweet {
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-width: 0.25em;
+  width: 77vw;
+}
+
+.withAt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75vw;
+}
+
+#name {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+#handle {
+  color: rgb(141, 140, 140);
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.postInfo {
+  width: 75vw;
+  display: flex;
+  align-items: center;
+  width: 73vw;
+  justify-content: space-between;
+  font-size: 0.6em;
+  height: 3em;
+}
+
+.profile-pic {
+  height: inherit;
+}
+
+.icons {
+    width: 4em;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5em;
+    color: #4056A1;;
+}

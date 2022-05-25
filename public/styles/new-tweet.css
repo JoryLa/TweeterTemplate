@@ -1,18 +1,36 @@
 .new-tweet {
-
+  padding-bottom: 2em;
 }
 
 textarea {
   resize: none;
 }
 
+form {
+  padding-top: 2em;
+  width: 80vw;
+  height: 5.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea {
+  height: 1.7em;
+  width: 80vw;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+
 #tweet-text{
-    background: transparent;
-    border-bottom-style: solid;
-    border-color: black;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
+  background: transparent;
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-width: 0.25em;
+  width: 79vw;
+  border-color: black;
 }
 
 #tweet {
@@ -24,9 +42,9 @@ textarea {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
+  width: 79vw;
 }
 
 .label {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 900;
+  
 }
