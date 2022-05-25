@@ -21,6 +21,9 @@
     <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -48,15 +51,29 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2 class="name">Your Name</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Natoque penatibus et magnis dis parturient montes nascetur. Commodo ullamcorper a lacus vestibulum. Elementum integer enim neque volutpat ac tincidunt vitae semper. Consectetur adipiscing elit ut aliquam. Laoreet sit amet cursus sit amet dictum sit amet. Diam phasellus vestibulum lorem sed risus ultricies tristique. Phasellus vestibulum lorem sed risus. Faucibus purus in massa tempor nec feugiat nisl. Tellus elementum sagittis vitae et leo. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Lacinia at quis risus sed. Eu ultrices vitae auctor eu.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod quis viverra nibh cras. Eget velit aliquet sagittis id consectetur purus ut faucibus. Tempor id eu nisl nunc mi ipsum faucibus. Odio aenean sed adipiscing diam. Orci eu lobortis elementum nibh tellus molestie nunc. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Consequat ac felis donec et odio pellentesque. Sed cras ornare arcu dui vivamus arcu felis. Id ornare arcu odio ut sem nulla pharetra diam. Eget egestas purus viverra accumsan in nisl. Amet aliquam id diam maecenas ultricies mi eget mauris pharetra.     
-      </p>
+      <section class="new-tweet">
+        <form action="/tweets" method="post">
+          <label class="label" for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="undertext">
+              <button id="tweet" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="tweetContainer">
+        <article>
+          <img class="profile-pic" src="">
+          <h3>Name</h3>
+          <p>This is where the tweet goes</p>
+        </article>
+      </section>
     </main>
   </body>
 </html>
