@@ -4,6 +4,7 @@
 
 textarea {
   resize: none;
+  font-size: 1em;
 }
 
 form {
