@@ -4,44 +4,22 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(() => {
-  
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-  
-  const renderTweets = function(tweets) {
+$(document).ready(function () {
+
+
+
+  const renderTweets = function (tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    console.log('tweets: ', tweets);
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('.tweets-container').append($tweet);
-      console.log($tweet);
+
     }
   }
-  
+
   const createTweetElement = function (obj) {
     const $tweet = `<article>
     <div class="withTweet">
@@ -52,7 +30,7 @@ $(() => {
         </div>
         <h3 id="handle">${obj.user.handle}</h3>
       </div>
-      <p>${obj.content.text}</p>
+      <p class="tweetText">${obj.content.text}</p>
     </div>
     <div class="postInfo">
       <p class="whenPosted"> ${timeago.format(obj.created_at)}</p>
@@ -63,9 +41,58 @@ $(() => {
       </div>
     </div>
   </article>`
-  return $tweet;
+    return $tweet;
   };
 
-  renderTweets(data);
 
-}); 
+
+  //Submit a new tweet
+  $("#submit").submit(function (event) {
+    event.preventDefault();
+    let data = $(this).serialize();
+    let tweetText = $('#tweet-text').val();
+    let max = 140;
+    if (tweetText.length > max) {
+      alert('Must be less than 140 characters.')
+    } else if (tweetText.length < 1 || tweetText.length === null) {
+      alert('Must contain at least 1 character.')
+    } else {
+      $.ajax({ url: "/tweets", method: "POST", data: data })
+        .then(loadLastSubmittedTweet)
+    }
+  });
+
+  const loadLastSubmittedTweet = function () {
+    $.ajax(('/tweets'), { method: 'GET' })
+      .then(function (result) {
+        let lastTweet = result[result.length - 1]
+        const $tweet = createTweetElement(lastTweet);
+        $('.tweets-container').prepend($tweet);
+      });
+  }
+
+
+
+
+
+
+  function loadTweets() {
+    $.ajax(('/tweets'), { method: 'GET' })
+      .then(function (result) {
+        renderTweets(result);
+      });
+  }
+
+  loadTweets();
+
+  /*Upon page load, lod existing tweets from database.
+    When 'tweet' button is clicked, submit the form. If there's no errors store in database and render last tweet.
+    */
+
+});
+
+
+
+
+
+

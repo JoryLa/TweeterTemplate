@@ -6,7 +6,7 @@ $(document).ready(function() {
     
     $('.counter').text(charLeft);
     
-    if (charLength > 140) {
+    if (charLength > max) {
       $('.counter').css('color', 'red');
     } else {
       $('.counter').css('color', 'black');
