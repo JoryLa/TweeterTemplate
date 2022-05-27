@@ -1,14 +1,51 @@
 header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  height: 400px;
+  height: 32vh;
   width: 100vw;
   background-image: url('../images/peach.png');
-  margin-top: 120px;
+  z-index: 0;
+}
+
+.your-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .name {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  display: flex;
+  width: 80vw;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.profile-hex {
+  height: 7.3rem;
+  width: 7.3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .profile-hex {
+    height: 13rem;
+    width: 13rem;
+  }
+
+  .name{
+    margin-bottom: 4.5%;
+    margin-top: 2%;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    margin-top: 10%;
+    padding-top: 30%;
+  }
 }

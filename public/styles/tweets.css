@@ -21,6 +21,10 @@ article:hover {
   box-shadow: 5px 10px #888888;
 }
 
+.tweetText {
+  overflow-wrap: anywhere;
+}
+
 .withTweet {
   border-style: solid;
   border-top: 0;
