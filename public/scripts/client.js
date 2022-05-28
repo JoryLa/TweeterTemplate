@@ -6,9 +6,7 @@
 
 $(document).ready(function () {
 
-
-
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
@@ -20,6 +18,14 @@ $(document).ready(function () {
     }
   }
 
+  // Function to avoid Cross-Site Scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Function that makes HTML template
   const createTweetElement = function (obj) {
     const $tweet = `<article>
     <div class="withTweet">
@@ -30,7 +36,7 @@ $(document).ready(function () {
         </div>
         <h3 id="handle">${obj.user.handle}</h3>
       </div>
-      <p class="tweetText">${obj.content.text}</p>
+      <p class="tweetText">${escape(obj.content.text)} </p>
     </div>
     <div class="postInfo">
       <p class="whenPosted"> ${timeago.format(obj.created_at)}</p>
@@ -53,15 +59,22 @@ $(document).ready(function () {
     let tweetText = $('#tweet-text').val();
     let max = 140;
     if (tweetText.length > max) {
-      alert('Must be less than 140 characters.')
+      let tooMany = ' ⚠️ Must be less than 140 characters. ⚠️ ';
+      $('.error').text(tooMany)
     } else if (tweetText.length < 1 || tweetText.length === null) {
-      alert('Must contain at least 1 character.')
+      let tooLittle = ' ⚠️ Must contain at least 1 character. ⚠️ ';
+      $('.error').text(tooLittle);
     } else {
+      $('.error').empty();
       $.ajax({ url: "/tweets", method: "POST", data: data })
         .then(loadLastSubmittedTweet)
+        .then(() => {
+          $('#tweet-text').val('')
+        })
     }
   });
 
+  //Load posted tweet
   const loadLastSubmittedTweet = function () {
     $.ajax(('/tweets'), { method: 'GET' })
       .then(function (result) {
@@ -71,11 +84,7 @@ $(document).ready(function () {
       });
   }
 
-
-
-
-
-
+  //Loads tweets in databse
   function loadTweets() {
     $.ajax(('/tweets'), { method: 'GET' })
       .then(function (result) {

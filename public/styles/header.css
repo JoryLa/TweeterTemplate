@@ -36,7 +36,7 @@ header {
     width: 13rem;
   }
 
-  .name{
+  .name {
     margin-bottom: 4.5%;
     margin-top: 2%;
     font-size: 1.5em;
@@ -46,6 +46,21 @@ header {
 @media only screen and (min-width: 1024px) {
   header {
     margin-top: 10%;
-    padding-top: 30%;
+    width: 35vw;
+    margin-left: 2.5%;
+    margin-top: 0px;
+    align-self: center;
+    display: flex;
+    padding-top: 0px;
+    height: 40vh;
+  }
+
+  .name {
+    width: fit-content;
+  }
+
+  .profile-hex {
+    height: 7.5em;
+    width: 7.5em;
   }
 }

@@ -4,7 +4,8 @@ nav {
   height: 8vh;
   width: 100vw;
   /*background-color: #4056A1; /* ---> min 768px*/
-  background-color: transparent; /*---> min 320px*/
+  background-color: transparent;
+  /*---> min 320px*/
   color: #FFFFFF;
   padding-left: 5%;
   padding-right: 5%;
@@ -19,32 +20,32 @@ nav {
   font-family: 'Bungee', cursive;
   font-size: 1.8rem;
   height: 1em;
- }
- 
- .navright {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   flex-direction: column;
-   padding-top: 0.5%;
- }
+}
 
- .write {
-   font-weight: 900;
- }
+.navright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 0.5%;
+}
 
- #navicon {
-   color: rgb(227, 30, 30);
-   font-size: 0.75em;
-   padding-top: 1.2%;
- }
+.write {
+  font-weight: 900;
+}
 
- .navnew {
+#navicon {
+  color: rgb(227, 30, 30);
+  font-size: 0.75em;
+  padding-top: 1.2%;
+}
+
+.navnew {
   height: 1em;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: large;
- }
+}
 
 @media only screen and (min-width: 768px) {
   .navnew {
@@ -71,7 +72,7 @@ nav {
     display: flex;
     align-items: center;
   }
-  
+
   #navicon {
     font-size: 0.8em
   }
@@ -90,6 +91,5 @@ nav {
     padding-top: 0.5em;
   }
 
-  
-}
 
+}

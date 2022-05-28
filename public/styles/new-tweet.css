@@ -5,10 +5,14 @@
 textarea {
   resize: none;
   font-size: 1em;
+  height: 1.7em;
+  width: 80vw;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
 }
 
 form {
-  padding-top: 2em;
+  padding-top: 1em;
   width: 79.5vw;
   height: 5.5em;
   display: flex;
@@ -16,14 +20,7 @@ form {
   justify-content: space-between;
 }
 
-textarea {
-  height: 1.7em;
-  width: 80vw;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 900;
-}
-
-#tweet-text{
+#tweet-text {
   background: transparent;
   border-style: solid;
   border-top: 0;
@@ -44,4 +41,28 @@ textarea {
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   width: 79vw;
+}
+
+.error {
+  margin-bottom: 1%;
+  color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+  .undertext {
+    width: 54vw;
+  }
+
+  #tweet-text {
+    width: 54vw;
+  }
+
+  #submit {
+    width: 55vw;
+    align-items: center;
+  }
+
+  .error {
+    width: 55vw;
+  }
 }
